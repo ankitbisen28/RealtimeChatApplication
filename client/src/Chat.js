@@ -33,10 +33,12 @@ export const Chat = ({ socket, username, room }) => {
   return (
     <div className="chat-window">
       <div className="chat-header">
-        <p>Live Chat</p>
+        <p>Live Chat <b>{room}</b></p>
+        
       </div>
       <div className="chat-body">
         <ScrollToBottom className="message-container">
+          <p className="my-3 mx-2">{username} has Joined The chat</p>
           {messageList.map((messageContent) => {
             return (
               <div

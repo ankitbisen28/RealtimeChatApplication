@@ -10,7 +10,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
     cors: {
-        origin: "http://localhost:3000",
+        origin: "https://ankitchatapplication.netlify.app",
         methods: ["GET","POST"],
     },
 });
@@ -34,6 +34,6 @@ io.on("connection" , (socket) => {
 
 
 
-server.listen(PORT, () => {
+server.listen(process.env.PORT || 3001, () => {
     console.log(`Server is running on PORT ${PORT}`)
 })
